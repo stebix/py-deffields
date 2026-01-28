@@ -1,0 +1,36 @@
+[project]
+name = "py-deffields"
+version = "0.1.0"
+description = "Volumetric deformation field generation with Python."
+readme = "README.md"
+authors = [
+    { name = "stebix", email = "jannik.stebani@physik.uni-wuerzburg.de" }
+]
+requires-python = ">=3.11"
+dependencies = [
+    "beartype>=0.19.0",
+    "einops>=0.8.2",
+    "ipympl>=0.10.0",
+    "ipywidgets>=8.1.8",
+    "jax>=0.9.0",
+    "jaxtyping>=0.3.6",
+    "k3d>=2.17.0",
+    "matplotlib>=3.10.8",
+    "numpy>=2.4.1",
+    "scikit-image>=0.26.0",
+    "scipy>=1.17.0",
+]
+
+[project.scripts]
+py-deffields = "py_deffields:main"
+
+[build-system]
+requires = ["uv_build>=0.9.27,<0.10.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "jupyter>=1.1.1",
+    "rich>=14.3.1",
+    "tqdm>=4.67.1",
+]
