@@ -39,7 +39,7 @@ class ElasticDeformation(DeformationField):
         self,
         shape: tuple[int, int, int],
         rng: np.random.Generator | None = None,
-    ) -> Float[Array, "D H W 3"]:
+    ) -> Float[Array, "d h w 3"]:
         """
         Generate elastic displacement field.
 
@@ -52,7 +52,7 @@ class ElasticDeformation(DeformationField):
 
         Returns
         -------
-        Float[Array, "D H W 3"]
+        Float[Array, "d h w 3"]
             Displacement field.
         """
         if rng is None:

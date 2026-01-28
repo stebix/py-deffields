@@ -90,7 +90,7 @@ class QuiverVisualizer:
         self,
         fig: Figure,
         ax: Axes,
-        deformation_field: Inexact[Array, "D H W 3"],
+        deformation_field: Inexact[Array, "d h w 3"],
         axis_index_slider: widgets.IntSlider,
         subsample_factor_slider: widgets.IntSlider,
         axis_order_dropdown: widgets.Dropdown,
@@ -100,10 +100,10 @@ class QuiverVisualizer:
 
         Parameters
         ----------
-        deformation_field : Inexact[Array, "D H W 3"]
+        deformation_field : Inexact[Array, "d h w 3"]
             3D deformation field to visualize.
         """
-        # this is the basic input deformation field in D H W 3 format
+        # this is the basic input deformation field in d h w 3 format
         self._input_deformation_field = deformation_field
         self._axis_index_slider = axis_index_slider
         self._subsample_factor_slider = subsample_factor_slider
@@ -114,7 +114,7 @@ class QuiverVisualizer:
     @classmethod
     def create(
         cls,
-        deformation_field: Inexact[Array, "D H W 3"],
+        deformation_field: Inexact[Array, "d h w 3"],
         ax: Axes | None = None,
     ) -> QuiverVisualizer:
         """
@@ -122,7 +122,7 @@ class QuiverVisualizer:
 
         Parameters
         ----------
-        deformation_field : Inexact[Array, "D H W 3"]
+        deformation_field : Inexact[Array, "d h w 3"]
             3D deformation field to visualize.
         
         Returns
@@ -138,7 +138,7 @@ class QuiverVisualizer:
         axis_index_slider = _make_axis_index_slider(deformation_field.shape[0])
 
 
-    def query_deformation_field(self) -> Inexact[Array, "D H W 3"]:
+    def query_deformation_field(self) -> Inexact[Array, "d h w 3"]:
         """
         Query the deformation field in the given axis state and subsample factor.
         """

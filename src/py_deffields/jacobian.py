@@ -12,8 +12,8 @@ from ._types import jaxcheck
 
 @jaxcheck
 def jacobian_determinant(
-    displacement: Float[Array, "D H W 3"],
-) -> Float[Array, "D H W"]:
+    displacement: Float[Array, "d h w 3"],
+) -> Float[Array, "d h w"]:
     """
     Compute Jacobian determinant of deformation field.
 
@@ -23,12 +23,12 @@ def jacobian_determinant(
 
     Parameters
     ----------
-    displacement : Float[Array, "D H W 3"]
+    displacement : Float[Array, "d h w 3"]
         Displacement field.
 
     Returns
     -------
-    Float[Array, "D H W"]
+    Float[Array, "d h w"]
         Jacobian determinant.
         Values < 0 indicate folding (topology violation).
         Values = 1 indicate no volume change.

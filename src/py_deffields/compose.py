@@ -14,10 +14,10 @@ from .grid import displacement_to_absolute
 
 @jaxcheck
 def compose(
-    field1: Float[Array, "D H W 3"],
-    field2: Float[Array, "D H W 3"],
+    field1: Float[Array, "d h w 3"],
+    field2: Float[Array, "d h w 3"],
     order: int = 1,
-) -> Float[Array, "D H W 3"]:
+) -> Float[Array, "d h w 3"]:
     """
     Compose two displacement fields.
 
@@ -26,16 +26,16 @@ def compose(
 
     Parameters
     ----------
-    field1 : Float[Array, "D H W 3"]
+    field1 : Float[Array, "d h w 3"]
         First displacement field.
-    field2 : Float[Array, "D H W 3"]
+    field2 : Float[Array, "d h w 3"]
         Second displacement field.
     order : int
         Interpolation order for resampling field2.
 
     Returns
     -------
-    Float[Array, "D H W 3"]
+    Float[Array, "d h w 3"]
         Composed displacement field.
     """
     if field1.shape != field2.shape:

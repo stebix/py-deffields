@@ -16,40 +16,40 @@ from .grid import displacement_to_absolute
 
 @overload
 def warp(
-    volume: Inexact[Array, "D H W"],
-    displacement: Float[Array, "D H W 3"],
+    volume: Inexact[Array, "d h w"],
+    displacement: Float[Array, "d h w 3"],
     order: int = 1,
     mode: str = "constant",
     cval: float = 0.0,
-) -> Inexact[Array, "D H W"]: ...
+) -> Inexact[Array, "d h w"]: ...
 
 
 @overload
 def warp(
-    volume: Inexact[Array, "D H W C"],
-    displacement: Float[Array, "D H W 3"],
+    volume: Inexact[Array, "d h w C"],
+    displacement: Float[Array, "d h w 3"],
     order: int = 1,
     mode: str = "constant",
     cval: float = 0.0,
-) -> Inexact[Array, "D H W C"]: ...
+) -> Inexact[Array, "d h w C"]: ...
 
 
 @jaxcheck
 def warp(
-    volume: Inexact[Array, "D H W"] | Inexact[Array, "D H W C"],
-    displacement: Float[Array, "D H W 3"],
+    volume: Inexact[Array, "d h w"] | Inexact[Array, "d h w C"],
+    displacement: Float[Array, "d h w 3"],
     order: int = 1,
     mode: str = "constant",
     cval: float = 0.0,
-) -> Inexact[Array, "D H W"] | Inexact[Array, "D H W C"]:
+) -> Inexact[Array, "d h w"] | Inexact[Array, "d h w C"]:
     """
     Apply displacement field to warp a volume.
 
     Parameters
     ----------
-    volume : Inexact[Array, "D H W"] | Inexact[Array, "D H W C"]
+    volume : Inexact[Array, "d h w"] | Inexact[Array, "d h w C"]
         Input volume, either single-channel (D, H, W) or multi-channel (D, H, W, C).
-    displacement : Float[Array, "D H W 3"]
+    displacement : Float[Array, "d h w 3"]
         Displacement field.
     order : int
         Interpolation order: 0=nearest, 1=linear, 3=cubic.
@@ -60,7 +60,7 @@ def warp(
 
     Returns
     -------
-    Inexact[Array, "D H W"] | Inexact[Array, "D H W C"]
+    Inexact[Array, "d h w"] | Inexact[Array, "d h w C"]
         Warped volume with same shape as input.
     """
     if volume.ndim not in (3, 4):

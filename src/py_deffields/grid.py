@@ -11,7 +11,7 @@ from ._types import jaxcheck
 
 
 @jaxcheck
-def identity_grid(shape: tuple[int, int, int]) -> Float[Array, "D H W 3"]:
+def identity_grid(shape: tuple[int, int, int]) -> Float[Array, "d h w 3"]:
     """
     Create identity coordinate grid.
 
@@ -22,7 +22,7 @@ def identity_grid(shape: tuple[int, int, int]) -> Float[Array, "D H W 3"]:
 
     Returns
     -------
-    Float[Array, "D H W 3"]
+    Float[Array, "d h w 3"]
         Coordinate grid where each voxel contains its own [d, h, w] coordinates.
     """
     d, h, w = shape
@@ -37,19 +37,19 @@ def identity_grid(shape: tuple[int, int, int]) -> Float[Array, "D H W 3"]:
 
 @jaxcheck
 def displacement_to_absolute(
-    displacement: Float[Array, "D H W 3"],
-) -> Float[Array, "D H W 3"]:
+    displacement: Float[Array, "d h w 3"],
+) -> Float[Array, "d h w 3"]:
     """
     Convert displacement field to absolute coordinates.
 
     Parameters
     ----------
-    displacement : Float[Array, "D H W 3"]
+    displacement : Float[Array, "d h w 3"]
         Displacement field.
 
     Returns
     -------
-    Float[Array, "D H W 3"]
+    Float[Array, "d h w 3"]
         Absolute coordinate field.
     """
     shape = displacement.shape[:3]

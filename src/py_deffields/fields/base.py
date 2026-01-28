@@ -18,7 +18,7 @@ class DeformationField(ABC):
         self,
         shape: tuple[int, int, int],
         rng: np.random.Generator | None = None,
-    ) -> Float[Array, "D H W 3"]:
+    ) -> Float[Array, "d h w 3"]:
         """
         Generate displacement field.
 
@@ -31,7 +31,7 @@ class DeformationField(ABC):
 
         Returns
         -------
-        Float[Array, "D H W 3"]
+        Float[Array, "d h w 3"]
             Displacement field.
         """
         pass
@@ -40,6 +40,6 @@ class DeformationField(ABC):
         self,
         shape: tuple[int, int, int],
         rng: np.random.Generator | None = None,
-    ) -> Float[Array, "D H W 3"]:
+    ) -> Float[Array, "d h w 3"]:
         """Generate displacement field (convenience method)."""
         return self.generate(shape, rng)
