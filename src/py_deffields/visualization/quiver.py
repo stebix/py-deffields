@@ -35,6 +35,13 @@ def generate_einops_pattern(
     return pattern
 
 
+def generate_uv_selector():
+    """
+    Select the vector field components for quiver plotting based on axis order.
+    """
+    pass
+
+
 def _make_axis_dropdown():
     """
     Axis order dropdown.
