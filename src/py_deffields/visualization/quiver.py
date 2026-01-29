@@ -41,6 +41,12 @@ def get_vectorfield_component_indices(
 ) -> tuple[int, int]:
     """
     Select the in-plane vectorfield components according to the AxisState.
+
+    For a 3D vector field, we have the array layout of (D, H, W, 3).
+    Depending on the axis order or axis state with a specific slicing axis,
+    which in this package is almost always the first axis in the AxisState,
+    we need to select different vector field components
+    for correct in-plane visualization.
     """
     axis_to_index = {'z': 0, 'y': 1, 'x': 2}
     return tuple(axis_to_index[axis] for axis in axis_state.value[1:])
