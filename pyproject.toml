@@ -31,6 +31,7 @@ build-backend = "uv_build"
 [dependency-groups]
 dev = [
     "jupyter>=1.1.1",
+    "line-profiler>=5.0.0",
     "rich>=14.3.1",
     "tqdm>=4.67.1",
 ]
