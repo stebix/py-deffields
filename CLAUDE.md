@@ -1,7 +1,6 @@
-# poject description
+# project description
 
-This project is concerned with the implementation of volumetric 3D deformation fields and noise patterns
-as a preprocessing stage for volumetric image warping and augmentation.
+This project is concerned with the implementation of volumetric 3D deformation fields and noise patterns as a preprocessing stage for volumetric image warping and augmentation.
 
 # development environment
 
