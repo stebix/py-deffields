@@ -14,6 +14,10 @@ Available Noise Types
 - **Gaussian**: Independent random noise at each voxel (baseline texture)
 - **Perlin**: Coherent gradient noise with smooth, natural patterns
 - **Blob**: Randomly placed spherical features (particle-like texture)
+- **Poisson**: Signal-dependent shot noise (photon counting statistics)
+- **Cellular**: Cell-like Worley/Voronoi tessellation patterns
+- **Spectral**: Frequency-domain noise with prescribed power spectrum
+- **Speckle**: Multiplicative coherent imaging noise (ultrasound, SAR, OCT)
 
 Examples
 --------
@@ -46,6 +50,18 @@ from .perlin import PerlinNoise, generate_perlin
 # Blob noise
 from .blob import BlobNoise, generate_blobs
 
+# Poisson noise
+from .poisson import PoissonNoise, generate_poisson
+
+# Cellular noise
+from .cellular import CellularNoise, generate_cellular
+
+# Spectral noise
+from .spectral import SpectralNoise, generate_spectral
+
+# Speckle noise
+from .speckle import SpeckleNoise, generate_speckle
+
 # Composition utilities
 from .compose import (
     add_noise,
@@ -62,10 +78,18 @@ __all__ = [
     "GaussianNoise",
     "PerlinNoise",
     "BlobNoise",
+    "PoissonNoise",
+    "CellularNoise",
+    "SpectralNoise",
+    "SpeckleNoise",
     # Functional generators
     "generate_gaussian",
     "generate_perlin",
     "generate_blobs",
+    "generate_poisson",
+    "generate_cellular",
+    "generate_spectral",
+    "generate_speckle",
     # Composition utilities
     "add_noise",
     "multiply_noise",
